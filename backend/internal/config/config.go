@@ -9,12 +9,12 @@ import (
 
 // Config holds runtime configuration loaded from environment variables.
 type Config struct {
-	Env                  string
-	Port                 string
-	DatabaseURL          string
-	JWTSecret            string
-	JWTIssuer            string
-	JWTExpiry            time.Duration
+	Env                   string
+	Port                  string
+	DatabaseURL           string
+	JWTSecret             string
+	JWTIssuer             string
+	JWTExpiry             time.Duration
 	PlatformCommissionBPS int
 	SaaSMonthlyPriceCents int
 	DefaultStampThreshold int

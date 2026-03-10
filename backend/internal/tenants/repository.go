@@ -3,7 +3,6 @@ package tenants
 import (
 	"context"
 	"fmt"
-	"time"
 
 	"github.com/jackc/pgx/v5/pgxpool"
 )
@@ -72,8 +71,4 @@ func (r *PostgresRepository) GetByID(ctx context.Context, id string) (Tenant, er
 		return Tenant{}, fmt.Errorf("get tenant by id: %w", err)
 	}
 	return out, nil
-}
-
-func nowUTC() time.Time {
-	return time.Now().UTC()
 }

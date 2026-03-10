@@ -1,0 +1,24 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env
+**/.env
+
+# Go
+**/bin/
+**/tmp/
+**/*.test
+**/coverage.out
+
+# Node / React Native
+**/node_modules/
+**/dist/
+**/build/
+**/.expo/
+**/.turbo/
+
+# Logs
+*.log

@@ -2,10 +2,12 @@ package loyalty
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
@@ -39,6 +41,9 @@ func (s *Service) EnsureDefaultConfig(ctx context.Context, tenantID string, stam
 	err := s.pool.QueryRow(ctx, query, tenantID).Scan(&existing)
 	if err == nil {
 		return nil
+	}
+	if !errors.Is(err, pgx.ErrNoRows) {
+		return fmt.Errorf("check active loyalty config: %w", err)
 	}
 
 	// If there is no active config, create one.

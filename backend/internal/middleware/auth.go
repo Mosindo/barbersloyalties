@@ -3,8 +3,8 @@ package middleware
 import (
 	"strings"
 
-	"github.com/barbersloyalties/backend/internal/auth"
 	"github.com/barbersloyalties/backend/internal/httpx"
+	"github.com/barbersloyalties/backend/internal/identity"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +16,7 @@ const (
 )
 
 type tokenParser interface {
-	Parse(rawToken string) (*auth.Claims, error)
+	Parse(rawToken string) (*identity.Claims, error)
 }
 
 func AuthRequired(parser tokenParser) gin.HandlerFunc {
