@@ -6,6 +6,26 @@ Thumbs.db
 
 # Env
 **/.env
+**/.env.*
+!**/.env.example
+!**/.env.template
+
+# Sensitive keys/certs
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.jks
+**/*.keystore
+**/id_rsa
+**/id_dsa
+**/id_ed25519
+**/secrets.yaml
+**/secrets.yml
+**/secrets.json
+**/credentials.yaml
+**/credentials.yml
+**/credentials.json
 
 # Go
 **/bin/
